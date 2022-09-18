@@ -1,0 +1,59 @@
+// visit.ejs
+
+.market-list {
+    position: absolute;
+    top: 20vh;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-wrap: wrap;
+   
+
+        .market-list-item {
+            color: $tertiary-text-color;
+            border-radius: 20px;
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 2rem;
+            flex: 1 0 21%; 
+            width: 440px;
+            height: 190px;
+
+            // box-shadow: 0 4px 16px $shadow-color;
+            
+            .market-list-content {
+              display: flex;
+              align-items: center;
+            }
+
+            .market-list-heading {
+                font-weight: 500; 
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+
+            .market-list-p {
+                font-weight: 300;
+                font-size: 16px;
+                margin-bottom: 5px;
+
+            }
+
+            a {
+                float: right;
+                text-decoration: none;
+                border: 2px solid $tertiary-text-color;
+                border-radius: 10px;
+                color: $tertiary-text-color;
+                letter-spacing: 0.1rem;
+                padding: 10px 20px;
+                font-weight: 500;
+                
+                &:hover {
+                    background-color: $bg-container-color;
+                }
+            }
+
+        
+        }
+    }
+    

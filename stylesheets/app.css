@@ -1,0 +1,418 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@-webkit-keyframes move-to-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@-moz-keyframes move-to-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@-ms-keyframes move-to-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@-o-keyframes move-to-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes move-to-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+body {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.7;
+  padding: 30px 100px;
+  height: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+body .body-img {
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-image: url(../img/ja-ma--gOUx23DNks-unsplash.jpg);
+  background-size: cover;
+  z-index: -2;
+}
+body .body-img::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  opacity: 0.4;
+  z-index: -1;
+}
+body .body-container {
+  max-width: 100%;
+}
+body .body-container footer p {
+  color: #333745;
+  position: absolute;
+  top: 100vh;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+body .main {
+  position: relative;
+  max-width: 100%;
+  min-height: 80%;
+  background-color: white;
+  top: 15vh;
+  border-radius: 15px;
+}
+body .main-text-box {
+  position: absolute;
+  top: 20vh;
+  right: 15%;
+}
+body .heading-main {
+  display: block;
+  -webkit-animation: move-to-right 2s ease-out;
+  -moz-animation: move-to-right 2s ease-out;
+  -ms-animation: move-to-right 2s ease-out;
+  -o-animation: move-to-right 2s ease-out;
+  animation: move-to-right 2s ease-out;
+}
+body .market-list {
+  position: absolute;
+  top: 20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  flex-wrap: wrap;
+}
+body .market-list .market-list-item {
+  color: #333745;
+  border-radius: 20px;
+  background-color: white;
+  padding: 30px;
+  margin-bottom: 2rem;
+  flex: 1 0 21%;
+  width: 440px;
+  height: 190px;
+  vertical-align: middle;
+}
+body .market-list .market-list-item .market-list-heading {
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 10px;
+  vertical-align: middle;
+}
+body .market-list .market-list-item .market-list-p {
+  font-weight: 300;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+body .market-list .market-list-item a {
+  float: right;
+  text-decoration: none;
+  border: 2px solid #333745;
+  border-radius: 10px;
+  color: #333745;
+  letter-spacing: 0.1rem;
+  padding: 10px 20px;
+  font-weight: 500;
+}
+body .market-list .market-list-item a:hover {
+  background-color: #C7EFCF;
+}
+body .category-list {
+  display: inline-block;
+  width: auto;
+}
+body .category-list .category-list-item {
+  text-decoration: none;
+  font-size: 24px;
+}
+body #cluster-map {
+  width: 50%;
+  height: 400px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10%;
+  border-radius: 10px;
+}
+body .mapboxgl-popup-content {
+  max-width: 200px;
+  border-radius: 15px;
+}
+body .mapboxgl-popup-content a {
+  text-align: center;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 20px;
+  color: #52b788;
+  margin: 0 15px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+body .mapboxgl-popup-content a:hover {
+  background: white;
+  color: #286147;
+}
+body .mapboxgl-popup-content p {
+  text-align: center;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 18px;
+  color: #52b788;
+  margin-bottom: 0;
+  margin-top: 0.5rem;
+}
+body .mapboxgl-popup-close-button {
+  position: absolute;
+  right: 10;
+  top: 5;
+  font-size: 18px;
+}
+body .mapboxgl-popup-close-button:hover {
+  color: #52b788;
+  background-color: transparent;
+}
+body ul,
+body li {
+  list-style: none;
+}
+body nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  z-index: 10;
+}
+body nav .nav-list {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+  font-size: 20px;
+}
+body nav .nav-list .nav-logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: auto;
+}
+body nav .nav-list .nav-logo .logo {
+  font-size: 2.5rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+body nav .nav-list .nav-logo .logo:hover, body nav .nav-list .nav-logo .logo:focus {
+  color: #52b788;
+  text-shadow: 0 0 3rem #d8f3dc;
+}
+body nav .nav-list .nav-logo #nav-toggle {
+  display: none;
+}
+body nav .nav-list .nav-link {
+  flex-shrink: 0;
+  flex-grow: 0;
+  font-weight: bold;
+  padding: 1.5rem 1.8rem;
+  position: relative;
+  cursor: pointer;
+}
+body nav .nav-list .nav-link span {
+  position: absolute;
+  right: 0;
+  top: 40%;
+  transition: transform 0.3s;
+}
+body nav .nav-list .nav-link:after {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 0.3em;
+  background: #52b788;
+  border-radius: 4px;
+  bottom: 1em;
+  left: 1.6em;
+  transition: width 0.3s;
+}
+body nav .nav-list .nav-link:hover::after {
+  width: 60%;
+}
+body nav .nav-list .nav-link:nth-child(4):hover::after {
+  width: 50%;
+}
+body nav .nav-list .nav-link:hover ul {
+  opacity: 1;
+  visibility: visible;
+}
+body nav .nav-list .nav-link:hover span {
+  transform: rotate(180deg);
+}
+body nav .nav-list .nav-link .nav-drop {
+  position: absolute;
+  top: 4rem;
+  box-shadow: 0 4px 16px #d8f3dc;
+  background-color: white;
+  border-radius: 4px;
+  border: 1px solid #65DEF1;
+  width: 12rem;
+  padding: 0.5rem;
+  margin-left: -1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: 300ms ease-out;
+}
+body nav .nav-list .nav-link .nav-drop li {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+body nav .nav-list .nav-link .nav-drop li:hover, body nav .nav-list .nav-link .nav-drop li:focus {
+  background: #d8f3dc;
+}
+body nav .nav-list .nav-link .nav-drop li a {
+  text-decoration: none;
+}
+body nav .btn {
+  border: none;
+  outline: transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background: white;
+  color: #52b788;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.1s;
+}
+body nav .btn .outline {
+  background: inherit;
+  border: 2px solid white;
+}
+body nav .btn:hover {
+  background: white;
+  color: #286147;
+}
+body nav .btn:focus {
+  text-shadow: 0 0 18px #d8f3dc;
+  outline: 4px solid white;
+}
+body nav .btn:active {
+  transform: scale(0.98);
+}
+body .show {
+  color: #333745;
+  z-index: 1;
+}
+@media screen and (max-width: 768px) {
+  body nav {
+    padding: 1rem 0;
+  }
+  body nav .nav-list {
+    display: block;
+  }
+  body nav .nav-list .nav-logo #nav-toggle {
+    display: block;
+  }
+  body nav .nav-list .nav-link {
+    padding: 1.5rem 0;
+  }
+  body nav .nav-list .nav-link span {
+    position: absolute;
+    right: 1rem;
+    top: 1.8rem;
+  }
+  body nav .nav-list .nav-link .nav-drop {
+    top: 1rem;
+    box-shadow: unset;
+    width: unset;
+    margin-left: -1rem;
+    opacity: 0;
+    visibility: hidden;
+  }
+  body nav .nav-list .nav-link:after {
+    top: 3em;
+    left: 0.08em;
+    transition: width 0.3s;
+  }
+  body nav .nav-list .nav-link:hover::after {
+    width: 4em;
+  }
+  body nav .nav-list .nav-link:nth-child(4):hover::after {
+    width: 3.5em;
+  }
+  body nav .nav-list .nav-link:hover ul {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/*# sourceMappingURL=app.css.map */

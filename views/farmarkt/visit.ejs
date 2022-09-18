@@ -1,0 +1,53 @@
+
+
+    <% layout ('layouts/boilerplate') %> 
+    <div class="market-list">
+        
+    </div>
+    <div class="visit">
+    </div>
+
+
+<script>
+    const markets = <%- JSON.stringify(markets)%>;
+    const container = document.querySelector('.market-list');
+    const pixel_offset = 200;
+    let handleLoad;
+    let output = "";
+    
+    function loadMarkets(minNum = 0, numMarkets = 5){
+        for(let i = minNum; i < numMarkets; i++){
+            const div = document.createElement('div');
+            div.className = 'market-list-item';
+            output = 
+            `
+            <a href="/visit/${markets[i].shortcut}" type="button">Read more</a>
+            <h1 class="market-list-heading market-list-content">${markets[i].title}</h1>
+            <p class="market-list-p market-list-content">${markets[i].neighborhood}</p>
+            <p class="market-list-p market-list-content">${markets[i].openingDays}</p>
+
+            `
+            console.log(output)
+            div.innerHTML = output;
+            container.appendChild(div);
+        }
+    }
+
+    loadMarkets();
+
+    let k = 5;
+    let offset = 5;
+    window.onscroll = ev => {
+        // Check scroll position
+        if((window.innerHeight + window.pageYOffset) >= document.body.scrollHeight - 2) {
+            if (k+offset < 21){
+                // Load more data
+                loadMarkets(minNum = k, numMarkets = k+offset);
+                k+=5;
+            }
+            console.log('loading complete');
+            return;
+        }
+    };
+
+</script> 

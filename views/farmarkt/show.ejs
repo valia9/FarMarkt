@@ -1,0 +1,18 @@
+<% layout ('layouts/boilerplate') %> 
+
+<div class="main">
+    <div id="map"></div>
+<div class="show">
+    <h5><%=market.title%></h5>
+    <p><%= market.description%></p>
+
+</div>
+    
+</div>
+
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZXh0ZXJuYWwtbWFzdGVycGllY2UiLCJhIjoiY2t2OGp1MDV2MWc3NDJyb2t1Nng1cW9meiJ9.122aI9wm7M9QEVAywCfXyA';
+    const market = <%- JSON.stringify(market) %>
+</script>
+
+<script src="/js/showMap.js"></script>

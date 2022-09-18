@@ -1,0 +1,213 @@
+ul,
+li {
+  color: black;
+  list-style: none;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  z-index: 10;
+
+      @include respond(tab-land) {
+        padding: 1rem 0;
+      }
+
+  .logo {
+          margin-right: auto;
+          font-size: 2.2rem;
+          text-decoration: none;
+          cursor: pointer;
+          transition: color 0.2s;
+          color: $primary-green;
+  
+          &:hover, &:focus {
+            color: black;
+          }}
+  
+  #nav-toggle {
+    display: none;
+
+  @include respond(tab-land) {
+      display: inline-flex;
+      right: 0;
+    }}
+
+  .nav-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    font-size: 20px;
+    padding: 0;
+
+    @include respond(tab-land) {
+          display: none;
+    }
+
+    // .nav-item {
+    //   margin-left: 10rem;
+    // }
+    
+
+    .nav-link {
+      flex-shrink: 0;
+      flex-grow: 0;
+      font-weight: bold;
+      padding: 1.5rem 1.8rem;
+      position: relative;
+      color: black;
+      cursor: pointer;
+
+      &:first-child {
+        margin-right: 25%;
+      }
+
+    @include respond(tab-land) {
+            padding: 1.5rem 0;
+
+            &:first-child {
+              display: inline-block;
+            }
+            // .visibility {
+            //   display: flex;
+            // }
+          }
+
+      span {
+        position: absolute;
+        right: 0;
+        top: 40%;
+        transition: transform 0.3s;
+          @include respond(tab-land) {
+            position: absolute;
+            right: 1rem;
+            top: 1.8rem;
+          }
+      }
+
+        &:after {
+          position: absolute;
+          content: "";
+          width: 0%;
+          height: 0.3em;
+          background: $primary-green;
+          border-radius: 4px;
+          bottom: 1em;
+          left: 1.6em;
+          transition: width 0.3s;
+
+
+            @include respond(tab-land) {
+              top: 3em;
+              left: 0.08em;
+              transition: width 0.3s;
+            }
+          }
+
+        &:hover::after {
+          width: 60%;
+            @include respond(tab-land) {
+              width: 4em;
+            }
+        }
+
+        
+
+        &:nth-child(4):hover::after {
+          width: 50%;
+            @include respond(tab-land) {
+              width: 3.5em;
+            }
+      }
+
+      &:hover {
+        ul {
+          opacity: 1;
+          visibility: visible;
+
+          @include respond(tab-land) {
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+        span {
+          transform: rotate(180deg);
+        }
+      }
+
+      .nav-drop {
+        position: absolute;
+        top: 4rem;
+        // box-shadow: 0 4px 16px $shadow-color;
+        background-color: white;
+        border-radius: 4px;
+        border: 2px solid $primary-green;
+        width: 12rem;
+        padding: 0.5rem;
+        margin-left: -1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: 300ms ease-out;
+
+        @include respond(tab-land) {
+          top: 1rem;
+          box-shadow: unset;
+          width: unset;
+          margin-left: -1rem;
+          opacity: 0;
+          visibility: hidden;
+        }
+        // transform: rotate(4deg);
+        li {
+          padding: 0.5rem 1rem;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: background 0.1s;
+          &:hover,
+          &:focus {
+            background: $shadow-color;
+          }
+        a {
+            text-decoration: none;
+        }
+
+        }
+      }
+    }
+  }
+  
+  .btn {
+      border: none;
+      outline: transparent;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      background: lighten($shadow-color, 25);
+      color: $primary-green;
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.1s;
+      
+      &:hover {
+        background: lighten($shadow-color, 15);
+        color: darken($primary-green, 25);
+      }
+      &:focus {
+        text-shadow: 0 0 18px $shadow-color;
+        outline: 4px solid lighten($shadow-color, 20);
+      }
+      &:active {
+        transform: scale(0.98);
+      }
+  }
+}

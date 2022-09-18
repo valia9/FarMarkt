@@ -1,0 +1,8 @@
+footer p {
+    color: $tertiary-text-color;
+    position: absolute;
+    top: 100vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+ }

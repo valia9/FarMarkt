@@ -1,0 +1,20 @@
+<% layout ('layouts/boilerplate') %> 
+
+
+<div class="home-container">
+<section id="cluster-map"></section>
+<section class="home-text-box">
+    <h2 class="heading-main">What's on</h2>
+</section>
+</div>
+
+<section id="calendar">
+</section>
+
+
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZXh0ZXJuYWwtbWFzdGVycGllY2UiLCJhIjoiY2t2OGp1MDV2MWc3NDJyb2t1Nng1cW9meiJ9.122aI9wm7M9QEVAywCfXyA';
+    const markets = {features: <%- JSON.stringify(markets)%>}
+</script>
+
+<script src="/js/clusterMap.js"></script>
