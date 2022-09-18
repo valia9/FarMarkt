@@ -15,3 +15,5 @@ be user-friendly enough to help everyone interested find the closest market --
 geographically or time-wise. Thus, FarMarkt was born.
 Initially, I would think of it as a too ambitios project. Currently, I think it must
 be rather realistic to finish it, provided that there is ever enough time :-)
+
+FarMarkt is (being) built using vanilla JS, MongoDB, HTML and SCSS and MapBox.
