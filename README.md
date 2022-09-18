@@ -2,7 +2,7 @@
 
 Hello! This was my first major project, perhaps this is why it is still in progress.
 
-FarMarkt is heavily based on Colt Steeles' project from his Udemy course, although
+FarMarkt is heavily based on Colt Steele's project from his Udemy course, although
 at some point I have given up the structure offered there and customised it:
 now, it uses SCSS and in future will use more modern look of the tabs, where
 each tab is devoted to a few sections versus each tab devoted to only one
