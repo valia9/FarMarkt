@@ -6,26 +6,12 @@ module.exports = [
         neighborhood: "Modřany, Prague 12",
         openingTime: "9:00-17:00",
         openingDays: "Every Thursday",
-        description: "lorem",
+        description: "Since the last year, the farmers' market in Modrany is rather a small one. Still, you should be able to purchase fresh vegetables, Slovakian salami and sausages, and bakery products.",
         webpage: "webpage",
         contact: "contact",
         title: "Farmers' Market at Prior Mall",
         id: 1,
         shortcut: "modrany"
-        // categories: [
-        //     {
-        //         category: "vegs",
-        //         id: 111
-        //     },
-        //     {
-        //         category: "bakery",
-        //         id: 112
-        //     },
-        //     {
-        //         category: "smokedMeats",
-        //         id: 123
-        //     }
-        // ]
     },
     {
         city: "Prague",
@@ -34,32 +20,12 @@ module.exports = [
         neighborhood: "Prosek, Prague 9",
         openingTime: "8:00-15:00",
         openingDays: "Every Tuesday and Thursday",
-        description: "lorem",
+        description: "Here you can purchase fresh fruits and vegetables, meats, salami and sausages, dairy and bakery products, pastry and spices.",
         webpage: "webpage",
         contact: "contact",
         title: "Farmers' Market at Poliklinika Prosek",
         id: 2,
         shortcut: "prosek"
-        // categories: [
-        //     {
-        //         category: "vegs",
-        //         id: 211
-        //     },
-        //     {
-        //         category: "bakery",
-        //         id: 212
-        //     },
-        //     {
-        //         category: "smokedMeats",
-        //         id: 223
-        //     }
-        //     // {category: "vegs"},
-        //     // {category: "bakery"},
-        //     // {category: "dairy"},
-        //     // {category: "fruits"},
-        //     // {category: "spices"},
-        //     // {category: "craft"}
-        // ]
     },
     {
         city: "Prague",
@@ -67,41 +33,14 @@ module.exports = [
         longitude: 14.432289937346042,
         neighborhood: "Vinohrady, Prague 2",
         openingTime: "9:00-18:00",
-        openingDays: "Every Tuesday to Thursday, March to November",
-        description: "lorem",
+        openingDays: "Monday to Friday, from mid-April to mid-November",
+        description: "Here you can purchase meats, fruits, vegetables, and herbs, dairy products and goat cheeses, honey, Moravian wines. Besides, you can purchase ceramics, flowers and plants on Tylak.",
         webpage: "webpage",
         contact: "contact",
         title: "Farmers' Market at Tylovo Square (Tylak)",
         id: 3,
         shortcut: "vinohrady_tylak"
-        // categories: [
-        //     {
-        //         category: "vegs",
-        //         id: 111
-        //     },
-        //     {
-        //         category: "bakery",
-        //         id: 112
-        //     },
-        //     {
-        //         category: "smokedMeats",
-        //         id: 123
-        //     }
-        // ]
-        // categories: [
-        //     {category: "vegs"},
-        //     {category: "bakery"},
-        //     {category: "meat"},
-        //     {category: "fruits"},
-        //     {category: "fish"},
-        //     {category: "dairy"},
-        //     {category: "spices"},
-        //     {category: "crafts"},
-        //     {category: "flowers"},
-        //     {category: "liquers"},
-        //     {category: "wine"},
-        //     {category: "honey"}
-        // ]
+
     },
     {
         city: "Prague",
@@ -110,7 +49,7 @@ module.exports = [
         neighborhood: "Dejvice, Prague 6",
         openingTime: "8:00-14:00",
         openingDays: "Every Saturday",
-        description: "lorem",
+        description: "",
         webpage: "webpage",
         contact: "contact",
         title: "Farmers' Market at Kulaťák",

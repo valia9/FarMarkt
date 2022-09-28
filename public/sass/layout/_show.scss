@@ -1,7 +1,44 @@
 // show.ejs
 
+.secondary-page {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
 
-.show {
+.single-market {
     color: $tertiary-text-color;
     z-index: 1;
+    background-color: white;
+    // width: 50%;
+    padding: 4rem 2rem;
+    margin-top: 2rem;
+    display: flex;
+    align-items: baseline;
+    // gap: 3rem;
+    // left: 50%;
+    // transform: translateX(50%);
+
+}
+
+.market--title {
+    flex-grow: 1;
+    margin-bottom: 2rem;
+    width: 25%;
+    font-size: large;
+}
+
+.market-desc-group {
+    flex-grow: 1;
+    width: 75%;
+}
+
+.market--description {
+    font-size: larger;
+}
+
+.fb-page {
+    position: relative;
+   left: -50%;
+   margin-bottom: 2rem;
 }

@@ -4,11 +4,7 @@ const app = express();
 const path = require('path');
 const ejsMate = require('ejs-mate');
 const mongoose = require('mongoose');
-// const { Market, Category, Relationship } = require('./models/schemas.js')
 const Market = require('./models/market');
-const Category = require('./models/category');
-const Relationship = require('./models/relationship');
-const { categoryID } = require('./seeds/relationshipSeeds.js');
 const { Marker } = require('mapbox-gl');
 
 

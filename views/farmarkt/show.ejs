@@ -1,17 +1,20 @@
 <% layout ('layouts/boilerplate') %> 
 
-<div class="main">
+<section class="secondary-page">
     <div id="map"></div>
-<div class="show">
-    <h5><%=market.title%></h5>
-    <p><%= market.description%></p>
-
-</div>
-    
-</div>
+        <div class="single-market">
+            <h5 class="market--title"><%=market.title%></h5>
+            <div class="market-desc-group">
+                <p class="market--description">Opened: <%= market.openingDays%></p>
+                <p class="market--description">Working hours: <%= market.openingTime%></p>
+                <p class="market--description"><%= market.description%></p>
+            </div>
+=
+            </div>    
+</section>
 
 <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZXh0ZXJuYWwtbWFzdGVycGllY2UiLCJhIjoiY2t2OGp1MDV2MWc3NDJyb2t1Nng1cW9meiJ9.122aI9wm7M9QEVAywCfXyA';
+    mapboxgl.accessToken = MAPBOX_TOKEN;
     const market = <%- JSON.stringify(market) %>
 </script>
 
