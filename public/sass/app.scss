@@ -10,10 +10,11 @@
 @import 'abstracts/mixins.scss';
 @import 'abstracts/variables.scss';
 @import 'components/map.scss';
-@import 'layout/navbar';
+@import 'components/navbar';
+@import 'components/footer';
 @import 'layout/visit';
-@import 'layout/footer';
 @import 'layout/show';
+@import 'layout/index';
 
 @include keyframes(move-to-right) { 
     0% {
@@ -62,64 +63,19 @@ body {
               height: 100%;
               width: 100%;
               background-color:white;
-              opacity: 0.4;
+              opacity: 0.6;
               z-index: -1;
             }
 
         }
 
-
-
-    .home-container {
-        position: relative;
-        max-width: 100%;
-        min-height: 200vh;
-        background-color: white;
-        top: 15vh;
-        border-radius: 15px;
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
-
-       @include respond(tab-land) {
-        flex-direction: column;
-       }
-       
-    //    .home-text-box {
-
-    //        min-height: 100vh;
-    //    }
-
-       .heading-main {
-           display: block;
-           @include animation('move-to-right 2s ease-out');
-       }
-
-    }
-
-    #calendar {
-      min-height: 100vh;
-    }
-    
-    
-
-
-// show.ejs
-
-    .show {
-          position: absolute;
-          right: 50px;
-          padding-top: 2em;
+        .section {
+            background-color: white;
+            // border-radius: 15px;
+            width: 80%;
+            margin: 0 auto; 
+            margin-top: 10%;
+            margin-bottom: 10%;
         }
-
-    .category-list{
-        display: inline-block;
-        width: auto;
-        .category-list-item {
-            text-decoration: none;
-            font-size: 24px;
-    
-        }
-    }
 
 }

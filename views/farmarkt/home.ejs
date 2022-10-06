@@ -1,20 +1,19 @@
 <% layout ('layouts/boilerplate') %> 
 
 
-<div class="home-container">
-<section id="cluster-map"></section>
-<section class="home-text-box">
-    <h2 class="heading-main">What's on</h2>
-</section>
-</div>
+<section class="section">
+    <div class="index-welcome">
+        <h3>FarMarkt is here to help you orient in the world of Prague city markets.</h3>
+    </div>
 
-<section id="calendar">
+        <div id="cluster-map"></div>
 </section>
 
 
 <script>
-    mapboxgl.accessToken = MAPBOX_TOKEN;
+    const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
     const markets = {features: <%- JSON.stringify(markets)%>}
 </script>
 
-<script src="/js/clusterMap.js"></script>
+<script src="/js/clusterMap.js">
+</script>

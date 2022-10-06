@@ -9,7 +9,7 @@ const MarketSchema = new Schema({
     geometry: {
         type: {
             type: String,
-            enum: ['Point'],
+            enum: ["Point"],
             required: true
         },
         coordinates: {
@@ -18,12 +18,16 @@ const MarketSchema = new Schema({
         }
     },
     neighborhood: {type: String, required: true},
+    pNum: {type: Number, required: true},
     openingTime: {type: String, required: true},
     openingDays: {type: String, required: true},
+    openingDaysArr: 
+        { type: [String],
+        // enum: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        required: true},
     description: {type: String, required: true},
     webpage: {type: String, required: true},
     contact: {type: String, required: true},
-    relationship: {type: mongoose.Types.ObjectId, ref: 'Relationship'},
     shortcut: {type: String, required: true},
     }, opts)
 
@@ -39,11 +43,6 @@ MarketSchema.virtual('properties.popUpMarkup').get(function() {
     </p>`
 });
 
-// MarketSchema.virtual("relationship", {
-//     ref: "Relationship",
-//     foreignField: "marketID",
-//     localField: "_id"
-// }); 
 
 module.exports = mongoose.model('Market', MarketSchema);
 // module.exports = mongoose.model('Category', categorySchema);

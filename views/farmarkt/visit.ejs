@@ -1,11 +1,13 @@
 
 
     <% layout ('layouts/boilerplate') %> 
-    <div class="market-list">
-        
-    </div>
-    <div class="visit">
-    </div>
+
+        <div class="market-list">
+            
+        </div>
+        <div class="visit">
+        </div>
+
 
 
 <script>
@@ -21,11 +23,14 @@
             div.className = 'market-list-item';
             output = 
             `
-            <a href="/visit/${markets[i].shortcut}" type="button">Read more</a>
-            <h1 class="market-list-heading market-list-content">${markets[i].title}</h1>
-            <p class="market-list-p market-list-content">${markets[i].neighborhood}</p>
-            <p class="market-list-p market-list-content">${markets[i].openingDays}</p>
-
+            <div class="market-list-content">
+                <div class="market-list-content-text">
+                    <h1 class="market-list-heading">${markets[i].title}</h1>
+                    <p class="market-list-p">Prague ${markets[i].pNum} – ${markets[i].neighborhood}</p>
+                    <p class="market-list-p">${markets[i].openingDays}</p>
+                </div>
+                <a href="/visit/${markets[i].shortcut}" type="button">Read more</a>
+            </div>
             `
             console.log(output)
             div.innerHTML = output;

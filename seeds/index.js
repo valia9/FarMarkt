@@ -31,8 +31,10 @@ const seedDB = async () => {
             id: `${markets[i].id}`,
             title: `${markets[i].title}`,
             neighborhood: `${markets[i].neighborhood}`,
+            pNum: `${markets[i].pNum}`,
             openingTime: `${markets[i].openingTime}`,
             openingDays: `${markets[i].openingDays}`,
+            openingDaysArr: `${markets[i].openingDaysArr}`,
             description: `${markets[i].description}`,
             geometry: {
                 type: "Point",

@@ -6,6 +6,8 @@ const ejsMate = require('ejs-mate');
 const mongoose = require('mongoose');
 const Market = require('./models/market');
 const { Marker } = require('mapbox-gl');
+const dotenv = require("dotenv");
+dotenv.config();
 
 
 
@@ -31,7 +33,7 @@ app.get('/', async (req,res) => {
 
 app.get('/visit', async (req,res) => {
  
-    const markets = await Market.find({});
+    const markets = await Market.find({}).sort({pNum:1});
 
     res.render('farmarkt/visit', {markets})
 })
@@ -41,16 +43,12 @@ app.get('/visit/:shortcut', async (req, res) => {
     res.render('farmarkt/show', {market})
 })
 
-app.get('/for-farmers', (req,res) => {
-    res.render('farmarkt/for-farmers')
+app.get('/gallery', (req,res) => {
+    res.render('farmarkt/gallery')
 })
 
-app.get('/farmers-login', (req,res) => {
-    res.render('farmarkt/farmers-login')
-})
-
-app.get('/about', (req,res) => {
-    res.render('farmarkt/about')
+app.get('/contact', (req,res) => {
+    res.render('farmarkt/contact')
 })
 
 app.get('*', (req,res) => {

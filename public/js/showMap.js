@@ -1,10 +1,12 @@
-mapboxgl.accessToken = MAPBOX_TOKEN;
+mapboxgl.accessToken = mapToken;
 const map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/light-v10',
+    style: 'mapbox://styles/mapbox/streets-v11',
     center: market.geometry.coordinates,
-    zoom: 12
+    zoom: 15
 });
+
+map.addControl(new mapboxgl.NavigationControl());
 
 new mapboxgl.Marker()
     .setLngLat(market.geometry.coordinates)
