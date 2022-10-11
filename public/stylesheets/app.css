@@ -15,7 +15,7 @@
   height: 50%;
   border-radius: 10px;
   margin: 0 auto;
-  z-index: 100;
+  z-index: 10;
 }
 
 .mapboxgl-popup-content {
@@ -71,7 +71,7 @@ nav {
   left: 50%;
   transform: translateX(-50%);
   background: white;
-  z-index: 10;
+  z-index: 100;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
 }
 @media (max-width: 75em) {
@@ -368,6 +368,32 @@ footer p {
   padding: 40px 30px;
 }
 
+.text-main-index {
+  text-align: center;
+  padding: 5rem 0;
+  width: 40%;
+  margin: auto;
+}
+
+.text-main-index-h2:nth-of-type(3) {
+  padding-top: 2rem;
+}
+
+.todays-markets:first-of-type, .tomorrows-markets:first-of-type {
+  padding-top: 2rem;
+}
+
+.todays-markets a, .tomorrows-markets a {
+  font-size: larger;
+  text-decoration: none;
+  color: black;
+  list-style: circle;
+}
+.todays-markets a:hover, .tomorrows-markets a:hover {
+  background: #C7EFCF;
+  border-bottom: 1px solid;
+}
+
 @-webkit-keyframes move-to-right {
   0% {
     opacity: 0;
@@ -439,7 +465,6 @@ body {
   font-size: 16px;
   line-height: 1.7;
   padding: 30px 100px;
-  height: 100%;
   max-width: 100%;
   margin: 0;
 }
@@ -469,9 +494,7 @@ body .body-img::after {
 body .section {
   background-color: white;
   width: 80%;
-  margin: 0 auto;
-  margin-top: 10%;
-  margin-bottom: 10%;
+  margin: 10% auto;
 }
 
 /*# sourceMappingURL=app.css.map */

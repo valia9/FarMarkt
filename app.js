@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const Market = require('./models/market');
 const { Marker } = require('mapbox-gl');
 const dotenv = require("dotenv");
+const {DateTime} = require("luxon");
 dotenv.config();
 
 
@@ -28,7 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', async (req,res) => {
     const markets = await Market.find({});
-    res.render('farmarkt/home', {markets})
+    res.render('farmarkt/home', {markets, DateTime})
 })
 
 app.get('/visit', async (req,res) => {

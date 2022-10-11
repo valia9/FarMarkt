@@ -2,3 +2,38 @@
     text-align: center;
     padding: 40px 30px;
 }
+
+.text-main-index {
+    text-align: center;
+    padding: 5rem 0;
+    width: 40%;
+    margin: auto;
+
+}
+
+.text-main-index-h2 {
+    &:nth-of-type(3) {
+        padding-top: 2rem;
+    }
+}
+
+.todays-markets, .tomorrows-markets {
+    // list-style:circle;
+    // text-align: left;
+    &:first-of-type {
+
+        padding-top: 2rem;
+    }
+}
+
+.todays-markets a, .tomorrows-markets a {
+    font-size: larger;
+    text-decoration: none;
+    color: black;
+    list-style:circle;
+
+    &:hover {
+        background: $bg-container-color;
+        border-bottom: 1px solid;
+    }
+}

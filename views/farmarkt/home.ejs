@@ -3,10 +3,25 @@
 
 <section class="section">
     <div class="index-welcome">
-        <h3>FarMarkt is here to help you orient in the world of Prague city markets.</h3>
+        <h2>FarMarkt is here to help you orient in the world of Prague city markets.</h2>
     </div>
 
         <div id="cluster-map"></div>
+
+        
+        <div class="text-main-index">
+            <h2>It's <%= DateTime.now().toLocaleString(DateTime.DATETIME_MED) %> in Prague</h2>
+            <h2 class="text-main-index-h2">Today, the following markets are open:</h2>
+
+            <ul class="todays-markets-container">
+                <li class="todays-markets"></li>
+            </ul>
+
+            <h2 class="text-main-index-h2">Tomorrow, the following:</h2>
+            <ul class="tomorrows-markets-container">
+                <li class="todays-markets"></li>
+            </ul>
+        </div>
 </section>
 
 
@@ -15,5 +30,62 @@
     const markets = {features: <%- JSON.stringify(markets)%>}
 </script>
 
-<script src="/js/clusterMap.js">
+<script src="/js/clusterMap.js"></script>
+
+<script>
+let todaysMarket = [];
+let todaysMarketLinks = [];
+const today = '<%- DateTime.now().toFormat('cccc') %>';
+    for (let market of markets.features) {
+        for (i = 0; i < market.openingDaysArr.length; i++) {
+            let singleDay = market.openingDaysArr[i].split(',');
+            for (j = 0; j < singleDay.length; j++) {
+                if (singleDay[j] === today){
+                    todaysMarket.push(market.title)
+                    todaysMarketLinks.push(market.shortcut)
+                }
+            }
+        }
+    }
+
+    let zip = (a, b) => a.map((title, shortcut) => [title, b[shortcut]]); 
+    let todaysZip = zip(todaysMarket, todaysMarketLinks);
+    console.log(todaysZip)
+
+        document.querySelector('.todays-markets-container').innerHTML = todaysZip.map(market => 
+        `<li class="todays-markets">
+            <a href="/visit/${market[1]}">${market[0]}</a>
+        </li>
+        `
+        ).join('')
+</script>
+
+<script>
+let tomorrowsMarket = [];
+let tomorrowsMarketLinks = [];
+const tomorrow = '<%- DateTime.now().plus({days: 1}).toFormat('cccc') %>';
+    for (let market of markets.features) {
+        for (i = 0; i < market.openingDaysArr.length; i++) {
+            let singleDay = market.openingDaysArr[i].split(',');
+            for (j = 0; j < singleDay.length; j++) {
+                if (singleDay[j] === tomorrow){
+                    tomorrowsMarket.push(market.title)
+                    tomorrowsMarketLinks.push(market.shortcut)
+                }
+            }
+        }
+    }
+
+    let zipper = (a, b) => a.map((title, shortcut) => [title, b[shortcut]]); 
+    let tomorrowsZip = zipper(tomorrowsMarket, tomorrowsMarketLinks);
+    console.log(tomorrowsZip)
+
+    // for (let w = 0; w < todaysZip.length; w++) {
+        document.querySelector('.tomorrows-markets-container').innerHTML = tomorrowsZip.map(market => 
+        `<li class="tomorrows-markets">
+            <a href="/visit/${market[1]}">${market[0]}</a>
+        </li>
+        `
+        ).join('')
+    // }
 </script>

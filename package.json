@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile:sass": "node-sass public/sass/app.scss public/stylesheets/app.css -w"
+    "sass": "sass --watch public/sass:public/stylesheets"
   },
   "keywords": [],
   "author": "AV",
