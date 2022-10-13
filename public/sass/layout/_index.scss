@@ -26,15 +26,15 @@
     }
 }
 
-.todays-markets a, .tomorrows-markets a,
-.todays-markets li, .tomorrows-markets {
-    font-size: larger;
+.todays-markets, .tomorrows-markets,
+.todays-markets a, .tomorrows-markets a {
     text-decoration: none;
     color: black;
+    font-size: large;
 
-    
     &:is(a):hover {
         background: $bg-container-color;
         border-bottom: 1px solid;
     }
+
 }
