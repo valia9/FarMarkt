@@ -26,13 +26,14 @@
     }
 }
 
-.todays-markets a, .tomorrows-markets a {
+.todays-markets a, .tomorrows-markets a,
+.todays-markets li, .tomorrows-markets {
     font-size: larger;
     text-decoration: none;
     color: black;
-    list-style:circle;
 
-    &:hover {
+    
+    &:is(a):hover {
         background: $bg-container-color;
         border-bottom: 1px solid;
     }

@@ -19,7 +19,6 @@
 
             <h2 class="text-main-index-h2">Tomorrow, the following:</h2>
             <ul class="tomorrows-markets-container">
-                <li class="todays-markets"></li>
             </ul>
         </div>
 </section>
@@ -48,22 +47,30 @@ const today = '<%- DateTime.now().toFormat('cccc') %>';
         }
     }
 
-    let zip = (a, b) => a.map((title, shortcut) => [title, b[shortcut]]); 
-    let todaysZip = zip(todaysMarket, todaysMarketLinks);
-    console.log(todaysZip)
-
-        document.querySelector('.todays-markets-container').innerHTML = todaysZip.map(market => 
+    if (todaysMarket.length !== 0) {
+        let zip = (a, b) => a.map((title, shortcut) => [title, b[shortcut]]); 
+        let todaysZip = zip(todaysMarket, todaysMarketLinks);
+        // console.log(todaysZip)
+    
+            document.querySelector('.todays-markets-container').innerHTML = todaysZip.map(market => 
+            `<li class="todays-markets">
+                <a href="/visit/${market[1]}">${market[0]}</a>
+            </li>
+            `
+            ).join('')
+    } else {
+        document.querySelector('.todays-markets-container').innerHTML = 
         `<li class="todays-markets">
-            <a href="/visit/${market[1]}">${market[0]}</a>
+            No markets on ${today}
         </li>
         `
-        ).join('')
+    }
 </script>
 
 <script>
 let tomorrowsMarket = [];
 let tomorrowsMarketLinks = [];
-const tomorrow = '<%- DateTime.now().plus({days: 1}).toFormat('cccc') %>';
+const tomorrow = '<%- DateTime.now().plus({days: 3}).toFormat('cccc') %>';
     for (let market of markets.features) {
         for (i = 0; i < market.openingDaysArr.length; i++) {
             let singleDay = market.openingDaysArr[i].split(',');
@@ -76,16 +83,22 @@ const tomorrow = '<%- DateTime.now().plus({days: 1}).toFormat('cccc') %>';
         }
     }
 
-    let zipper = (a, b) => a.map((title, shortcut) => [title, b[shortcut]]); 
-    let tomorrowsZip = zipper(tomorrowsMarket, tomorrowsMarketLinks);
-    console.log(tomorrowsZip)
-
-    // for (let w = 0; w < todaysZip.length; w++) {
-        document.querySelector('.tomorrows-markets-container').innerHTML = tomorrowsZip.map(market => 
-        `<li class="tomorrows-markets">
-            <a href="/visit/${market[1]}">${market[0]}</a>
-        </li>
-        `
-        ).join('')
-    // }
+    if (tomorrowsMarket.length !== 0) {
+        let zipper = (a, b) => a.map((title, shortcut) => [title, b[shortcut]]); 
+        let tomorrowsZip = zipper(tomorrowsMarket, tomorrowsMarketLinks);
+        console.log(tomorrowsZip)
+    
+            document.querySelector('.tomorrows-markets-container').innerHTML = tomorrowsZip.map(market => 
+            `<li class="tomorrows-markets">
+                <a href="/visit/${market[1]}">${market[0]}</a>
+            </li>
+            `
+            ).join('')
+        } else {
+            document.querySelector('.tomorrows-markets-container').innerHTML = 
+            `<li class="tomorrows-markets">
+                No markets on ${tomorrow}
+            </li>
+            `
+        }
 </script>

@@ -383,13 +383,14 @@ footer p {
   padding-top: 2rem;
 }
 
-.todays-markets a, .tomorrows-markets a {
+.todays-markets a, .tomorrows-markets a,
+.todays-markets li, .tomorrows-markets {
   font-size: larger;
   text-decoration: none;
   color: black;
-  list-style: circle;
 }
-.todays-markets a:hover, .tomorrows-markets a:hover {
+.todays-markets a:is(a):hover, .tomorrows-markets a:is(a):hover,
+.todays-markets li:is(a):hover, .tomorrows-markets:is(a):hover {
   background: #C7EFCF;
   border-bottom: 1px solid;
 }
